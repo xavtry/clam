@@ -19,5 +19,12 @@
   "thumbnail": "assest/images (3) (1).png",
   "file": "assest/eaglercraft.dev_Beta_1.6_WASM.html",
   "tags": ["pvp", "minecraft", "fun"]
+  },
+  {
+  "name": "Minecraft 1.8.8",
+  "description": "mc but 1.8.8 and pixel client",
+  "thumbnail": "assest/1.12.2 pixel.png",
+  "file": "assest/eaglercraft.dev_PixelClient_2_1.8.8_WASM.html",
+  "tags": ["pvp", "minecraft", "fun"]
   }
 ]
