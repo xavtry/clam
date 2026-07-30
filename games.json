@@ -1,7 +1,7 @@
 [
   {
     "name": "Minecraft 1.8.8",
-    "description": "js mc,
+    "description": "js mc",
     "thumbnail": "assest/mc.png",
     "file": "assest/eaglercraft.dev_Release_1.8.8_WASM.html",
     "tags": ["runner", "3d", "endless"]
