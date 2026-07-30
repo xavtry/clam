@@ -33,24 +33,44 @@
     }
 
     header {
-      padding: 24px 20px 16px;
+      padding: 40px 20px 32px;
       text-align: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(20, 20, 20, 0.7);
-      backdrop-filter: blur(8px);
+      background-image: url('images (9).jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    /* dark overlay on the header image */
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 2.4rem;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: #fff;
       margin-bottom: 6px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     header p {
-      font-size: 0.9rem;
-      color: #aaa;
+      font-size: 0.95rem;
+      color: #ddd;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
     }
 
     .search-wrap {
