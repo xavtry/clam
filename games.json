@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Slope",
+    "description": "Endless downhill runner",
+    "thumbnail": "assets/thumbnails/slope.svg",
+    "file": "games/slope/index.html",
+    "tags": ["runner", "3d", "endless"]
+  },
+  {
+    "name": "1v1.lol",
+    "description": "Build and shoot",
+    "thumbnail": "assets/thumbnails/1v1lol.svg",
+    "file": "games/1v1lol/index.html",
+    "tags": ["shooter", "multiplayer", "building"]
+  },
+  {
+    "name": "Retro Bowl",
+    "description": "Pixel football manager",
+    "thumbnail": "assets/thumbnails/retrobowl.svg",
+    "file": "games/retrobowl/index.html",
+    "tags": ["sports", "football", "management"]
+  },
+  {
+    "name": "Cookie Clicker",
+    "description": "Bake cookies forever",
+    "thumbnail": "assets/thumbnails/cookieclicker.svg",
+    "file": "games/cookieclicker/index.html",
+    "tags": ["idle", "clicker"]
+  },
+  {
+    "name": "Geometry Dash",
+    "description": "Rhythm platformer",
+    "thumbnail": "assets/thumbnails/geometrydash.svg",
+    "file": "games/geometrydash/index.html",
+    "tags": ["platformer", "rhythm", "hard"]
+  },
+  {
+    "name": "Snake",
+    "description": "Classic snake",
+    "thumbnail": "assets/thumbnails/snake.svg",
+    "file": "games/snake/index.html",
+    "tags": ["classic", "arcade"]
+  }
+]
