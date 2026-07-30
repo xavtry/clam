@@ -7,10 +7,10 @@
     "tags": ["runner", "3d", "endless"]
   },
   {
-    "name": "1v1.lol",
-    "description": "Build and shoot",
-    "thumbnail": "assets/thumbnails/1v1lol.svg",
-    "file": "games/1v1lol/index.html",
+    "name": "Minecraft 1.12.2",
+    "description": "pixelclient",
+    "thumbnail": "assest/1.12.2.png",
+    "file": "assest/eaglercraft.dev_PixelClient_2_1.12.2_WASM.html",
     "tags": ["shooter", "multiplayer", "building"]
   }
 ]
