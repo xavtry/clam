@@ -23,13 +23,97 @@
       background-attachment: fixed;
     }
 
-    /* dark overlay so text stays readable */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.65);
       z-index: -1;
+    }
+
+    /* ========== PASSWORD GATE ========== */
+    #gate {
+      position: fixed;
+      inset: 0;
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #gate.hidden {
+      display: none;
+    }
+
+    .gate-box {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 32px;
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .gate-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .gate-box p {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .gate-box input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border: 1px solid #333;
+      border-radius: 10px;
+      background: #111;
+      color: #fff;
+      outline: none;
+      margin-bottom: 12px;
+    }
+
+    .gate-box input:focus {
+      border-color: #555;
+    }
+
+    .gate-box button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .gate-box button:hover {
+      background: #ddd;
+    }
+
+    .gate-error {
+      color: #ff6b6b;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* ========== MAIN SITE ========== */
+    #main {
+      display: none;
+    }
+
+    #main.visible {
+      display: block;
     }
 
     header {
@@ -43,7 +127,6 @@
       position: relative;
     }
 
-    /* dark overlay on the header image */
     header::before {
       content: '';
       position: absolute;
@@ -88,13 +171,11 @@
       background: rgba(26, 26, 26, 0.8);
       color: #fff;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
       backdrop-filter: blur(6px);
     }
 
     .search-wrap input:focus {
       border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
     }
 
     .search-wrap input::placeholder {
@@ -116,7 +197,7 @@
       border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
-      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+      transition: transform 0.15s, border-color 0.15s;
       text-decoration: none;
       color: inherit;
       display: block;
@@ -126,7 +207,6 @@
     .game-card:hover {
       transform: translateY(-4px);
       border-color: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     }
 
     .game-card img {
@@ -176,19 +256,66 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Clam</h1>
-    <p>just games</p>
-  </header>
 
-  <div class="search-wrap">
-    <input type="text" id="search" placeholder="Search games..." autocomplete="off">
-    <div class="count" id="count"></div>
+  <!-- PASSWORD GATE -->
+  <div id="gate">
+    <div class="gate-box">
+      <h2>Clam</h2>
+      <p>Enter the password to continue</p>
+      <input type="password" id="pw" placeholder="Password" autocomplete="off">
+      <button onclick="checkPw()">Enter</button>
+      <div class="gate-error" id="error">Wrong password</div>
+    </div>
   </div>
 
-  <div class="games-grid" id="games"></div>
+  <!-- MAIN SITE -->
+  <div id="main">
+    <header>
+      <h1>Clam</h1>
+      <p>just games</p>
+    </header>
+
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="Search games..." autocomplete="off">
+      <div class="count" id="count"></div>
+    </div>
+
+    <div class="games-grid" id="games"></div>
+  </div>
 
   <script>
+    // ========== PASSWORD SETTINGS ==========
+    const PASSWORD = "sebistheGoatandriphubsy";   // ← change this to whatever you want
+    // =======================================
+
+    function checkPw() {
+      const input = document.getElementById('pw').value;
+      if (input === PASSWORD) {
+        sessionStorage.setItem('clam_auth', '1');
+        unlock();
+      } else {
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('pw').value = '';
+      }
+    }
+
+    function unlock() {
+      document.getElementById('gate').classList.add('hidden');
+      document.getElementById('main').classList.add('visible');
+      loadGames();
+    }
+
+    // already unlocked this session?
+    if (sessionStorage.getItem('clam_auth') === '1') {
+      unlock();
+    }
+
+    // allow Enter key
+    document.getElementById('pw').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') checkPw();
+    });
+
+    // ========== GAMES CODE ==========
     let games = [];
 
     async function loadGames() {
@@ -237,8 +364,6 @@
       );
       renderGames(filtered);
     });
-
-    loadGames();
   </script>
 </body>
 </html>
