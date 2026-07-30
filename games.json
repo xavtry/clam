@@ -12,5 +12,11 @@
     "thumbnail": "assest/1.12.2.png",
     "file": "assest/eaglercraft.dev_PixelClient_2_1.12.2_WASM.html",
     "tags": ["shooter", "multiplayer", "building"]
+  },
+  "name": "Minecraft 1.6",
+  "description": "mc but 1.6",
+  "thumbnail": "assest/images (3) (1).png",
+  "file": "assest/eaglercraft.dev_Beta_1.6_WASM.html",
+  "tags": ["pvp", "minecraft", "fun"]
   }
 ]
