@@ -19,65 +19,105 @@
     body::before { content:''; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:-1; }
 
     /* ========== PASSWORD GATE ========== */
-    #gate { position:fixed; inset:0; background:#0f0f0f; display:flex; align-items:center; justify-content:center; z-index:9999; }
-    #gate.hidden { display:none; }
+    #gate {
+      position: fixed; inset: 0; background: #0f0f0f;
+      display: flex; align-items: center; justify-content: center; z-index: 9999;
+    }
+    #gate.hidden { display: none; }
     .gate-box {
-      background:#1a1a1a; border:1px solid #333; border-radius:16px;
-      padding:32px; width:90%; max-width:360px; text-align:center;
+      background: #1a1a1a; border: 1px solid #333; border-radius: 16px;
+      padding: 32px; width: 90%; max-width: 360px; text-align: center;
     }
-    .gate-box h2 { font-size:1.4rem; margin-bottom:8px; color:#fff; }
-    .gate-box p { font-size:0.9rem; color:#888; margin-bottom:20px; }
+    .gate-box h2 { font-size: 1.4rem; margin-bottom: 8px; color: #fff; }
+    .gate-box p { font-size: 0.9rem; color: #888; margin-bottom: 20px; }
     .gate-box input {
-      width:100%; padding:12px 14px; font-size:1rem;
-      border:1px solid #333; border-radius:10px;
-      background:#111; color:#fff; outline:none; margin-bottom:12px;
+      width: 100%; padding: 12px 14px; font-size: 1rem;
+      border: 1px solid #333; border-radius: 10px;
+      background: #111; color: #fff; outline: none; margin-bottom: 12px;
     }
-    .gate-box input:focus { border-color:#555; }
+    .gate-box input:focus { border-color: #555; }
     .gate-box button {
-      width:100%; padding:12px; font-size:1rem; font-weight:600;
-      border:none; border-radius:10px; background:#fff; color:#000; cursor:pointer;
+      width: 100%; padding: 12px; font-size: 1rem; font-weight: 600;
+      border: none; border-radius: 10px; background: #fff; color: #000; cursor: pointer;
     }
-    .gate-box button:hover { background:#ddd; }
-    .gate-error { color:#ff6b6b; font-size:0.85rem; margin-top:10px; display:none; }
+    .gate-box button:hover { background: #ddd; }
+    .gate-error { color: #ff6b6b; font-size: 0.85rem; margin-top: 10px; display: none; }
 
-    /* ========== PACKS PAGE ========== */
-    header {
-      padding:40px 20px 32px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);
-      position:relative;
+    /* ========== 100X COOLER SIDEBAR ========== */
+    .f-nav {
+      position: fixed; top: 15px; left: 15px; bottom: 15px;
+      width: 170px; min-height: unset; box-sizing: border-box;
+      padding: 30px 15px; background-color: rgba(10,10,10,0.85);
+      box-shadow: 0 0 20px rgba(0,0,0,0.6), inset 0 0 30px rgba(0,0,0,0.3);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px; z-index: 1000; display: flex; flex-direction: column;
+      transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1); opacity: 1;
     }
+    .f-nav .icon {
+      position: relative; top: auto; left: auto; display: block; width: 100%; height: auto;
+      margin: 0 0 38px 0; text-align: center; text-transform: uppercase;
+      font-size: 42px; font-family: "Inter", sans-serif; cursor: pointer;
+      color: #fff; font-weight: 600; text-decoration: none; transition: all 0.2s ease;
+    }
+    .f-nav .icon:hover {
+      transform: scale(1.08) rotate(2deg); font-weight: 800; color: #fff;
+      text-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+    .f-nav .icon { font-size: 42px; color: #fff; margin: 0 0 38px 0; text-align: center; cursor: pointer; }
+
+    .f-nav-right {
+      position: static; display: flex; flex-direction: column;
+      align-items: stretch; width: 100%; margin-top: 15px;
+      transform: none; text-transform: uppercase; font-size: 26px;
+      color: #fff; font-weight: 600;
+    }
+    .f-nav-right .navbar-link {
+      width: 100%; box-sizing: border-box; margin: 8px 0;
+      padding: 14px 15px; text-align: left; text-transform: uppercase;
+      cursor: pointer; color: #fff; font-weight: 800;
+      font-family: "Inter", sans-serif; font-style: normal;
+      text-decoration: none; border-radius: 10px;
+      transition: all 0.2s ease; transform: none;
+    }
+    .f-nav-right .navbar-link:hover {
+      font-size: inherit; transform: translateX(8px);
+      background: rgba(255,255,255,0.09);
+    }
+
+    /* Main content */
+    .main { margin-left: 0; padding: 20px; }
+    header { padding: 40px 20px 32px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; }
     header::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.55); z-index:0; }
     header h1, header p { position:relative; z-index:1; }
-    header h1 { font-size:2.4rem; font-weight:700; letter-spacing:-0.5px; color:#fff; margin-bottom:6px; text-shadow:0 2px 8px rgba(0,0,0,0.5); }
-    header p { font-size:0.95rem; color:#ddd; text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+    header h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.5px; color: #fff; margin-bottom: 6px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+    header p { font-size: 0.95rem; color: #ddd; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
 
-    .search-wrap {
-      max-width:520px; margin:28px auto 0; padding:0 20px;
-    }
+    .search-wrap { max-width: 520px; margin: 28px auto 0; padding: 0 20px; }
     .search-wrap input {
-      width:100%; padding:14px 18px; font-size:1rem;
-      border:1px solid rgba(255,255,255,0.15); border-radius:12px;
-      background:rgba(26,26,26,0.8); color:#fff; outline:none; backdrop-filter:blur(6px);
+      width: 100%; padding: 14px 18px; font-size: 1rem;
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;
+      background: rgba(26,26,26,0.8); color: #fff; outline: none; backdrop-filter: blur(6px);
     }
-    .search-wrap input:focus { border-color:rgba(255,255,255,0.3); }
-    .search-wrap input::placeholder { color:#888; }
+    .search-wrap input:focus { border-color: rgba(255,255,255,0.3); }
+    .search-wrap input::placeholder { color: #888; }
 
     .packs-grid {
-      display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
-      gap:18px; padding:28px 20px 40px; max-width:1100px; margin:0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 18px; padding: 28px 20px 40px; max-width: 1100px; margin: 0 auto;
     }
     .pack-card {
-      background:rgba(26,26,26,0.85); border:1px solid rgba(255,255,255,0.1);
-      border-radius:14px; overflow:hidden; cursor:pointer;
-      transition:transform 0.15s, border-color 0.15s; text-decoration:none;
-      color:inherit; display:block; backdrop-filter:blur(6px);
+      background: rgba(26,26,26,0.85); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; overflow: hidden; cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s; text-decoration: none;
+      color: inherit; display: block; backdrop-filter: blur(6px);
     }
-    .pack-card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,0.25); }
-    .pack-card img { width:100%; aspect-ratio:1; object-fit:cover; background:#222; display:block; }
-    .pack-card .info { padding:12px; }
-    .pack-card .name { font-size:0.95rem; font-weight:600; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .pack-card .desc { font-size:0.75rem; color:#999; margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .empty { grid-column:1 / -1; text-align:center; padding:60px 20px; color:#aaa; font-size:1.1rem; }
-    .count { text-align:center; color:#888; font-size:0.85rem; margin-top:8px; }
+    .pack-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.25); }
+    .pack-card img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #222; display: block; }
+    .pack-card .info { padding: 12px; }
+    .pack-card .name { font-size: 0.95rem; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pack-card .desc { font-size: 0.75rem; color: #999; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .empty { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #aaa; font-size: 1.1rem; }
+    .count { text-align: center; color: #888; font-size: 0.85rem; margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -92,18 +132,27 @@
     </div>
   </div>
 
+  <!-- 100X COOLER SIDEBAR -->
+  <div class="f-nav" id="sidebar">
+    <div class="icon" id="icon-container">🐚</div>
+    <div class="icon" data-page="games">GAMES</div>
+    <div class="icon" data-page="packs">PACKS</div>
+    <div class="f-nav-right">
+      <a class="navbar-link" href="#" onclick="navigateTo('games')">Games</a>
+      <a class="navbar-link" href="#" onclick="navigateTo('packs')">Packs</a>
+    </div>
+  </div>
+
   <!-- PACKS PAGE -->
   <div id="main">
     <header>
       <h1>Packs</h1>
       <p>Everything you need in one place</p>
     </header>
-
     <div class="search-wrap">
       <input type="text" id="search" placeholder="Search packs..." autocomplete="off">
       <div class="count" id="count"></div>
     </div>
-
     <div class="packs-grid" id="packs"></div>
   </div>
 
@@ -129,7 +178,13 @@
     }
     if (sessionStorage.getItem('clam_auth') === '1') unlock();
 
-    // ========== PACKS CODE ==========
+    // ========== SIDEBAR NAVIGATION ==========
+    function navigateTo(page) {
+      document.querySelectorAll('#games-content, #packs-content').forEach(el => el.style.display = 'none');
+      document.getElementById(page + '-content').style.display = 'block';
+    }
+
+    // ========== PACKS ==========
     let packs = [];
     async function loadPacks() {
       try {
@@ -159,7 +214,6 @@
         </div>
       `).join('');
     }
-
     async function downloadPack(repoPath, title) {
       try {
         const res = await fetch(repoPath);
@@ -173,10 +227,9 @@
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
       } catch (e) {
-        alert('Failed to download pack. The file might be private or the link is broken.');
+        alert('Failed to download pack');
       }
     }
-
     document.getElementById('search').addEventListener('input', (e) => {
       const q = e.target.value.toLowerCase().trim();
       if (!q) { renderPacks(packs); return; }
