@@ -121,8 +121,6 @@
   </style>
 </head>
 <body>
-</head>
-<body>
   <!-- PASSWORD GATE -->
   <div id="gate">
     <div class="gate-box">
@@ -134,7 +132,7 @@
     </div>
   </div>
 
-  <!-- SIDEBAR -->
+  <!-- 100X COOLER SIDEBAR -->
   <div class="f-nav" id="sidebar">
     <div class="icon" id="icon-container">🐚</div>
     <div class="icon" data-page="games">GAMES</div>
@@ -145,30 +143,17 @@
     </div>
   </div>
 
-  <!-- MAIN SITE -->
+  <!-- GAMES PAGE -->
   <div id="main">
     <header>
-      <h1>Clam</h1>
-      <p>just games &amp; packs</p>
+      <h1>Games</h1>
+      <p>Just games</p>
     </header>
-
-    <!-- GAMES -->
-    <div id="games-content">
-      <div class="search-wrap">
-        <input type="text" id="search" placeholder="Search games..." autocomplete="off">
-        <div class="count" id="count"></div>
-      </div>
-      <div class="games-grid" id="games"></div>
+    <div class="search-wrap">
+      <input type="text" id="search" placeholder="Search games..." autocomplete="off">
+      <div class="count" id="count"></div>
     </div>
-
-    <!-- PACKS -->
-    <div id="packs-content" style="display:none;">
-      <div class="search-wrap">
-        <input type="text" id="search-packs" placeholder="Search packs..." autocomplete="off">
-        <div class="count" id="count-packs"></div>
-      </div>
-      <div class="packs-grid" id="packs"></div>
-    </div>
+    <div class="games-grid" id="games"></div>
   </div>
 
   <script>
@@ -242,7 +227,7 @@
       renderGames(filtered);
     });
 
-    // ========== PACKS ==========
+    // ========== PACKS (same as before) ==========
     let packs = [];
     async function loadPacks() {
       try {
@@ -272,7 +257,6 @@
         </div>
       `).join('');
     }
-
     async function downloadPack(repoPath, title) {
       try {
         const res = await fetch(repoPath);
@@ -289,7 +273,6 @@
         alert('Failed to download pack');
       }
     }
-
     document.getElementById('search-packs').addEventListener('input', (e) => {
       const q = e.target.value.toLowerCase().trim();
       if (!q) { renderPacks(packs); return; }
