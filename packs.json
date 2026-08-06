@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Ultimate Minecraft Pack",
+    "thumbnail": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400",
+    "description": "All Minecraft mods + texture pack",
+    "repoPath": "https://github.com/yourusername/minecraft-pack/raw/main/modpack.zip"
+  },
+  {
+    "title": "Fortnite Creative Pack",
+    "thumbnail": "https://images.unsplash.com/photo-1514790193030-c89d266d5a7c?w=400",
+    "description": "Creative maps & skins pack",
+    "repoPath": "https://github.com/yourusername/fortnite-pack/raw/main/creative.zip"
+  },
+  {
+    "title": "Roblox Experience Bundle",
+    "thumbnail": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400",
+    "description": "50+ Roblox experiences",
+    "repoPath": "https://github.com/yourusername/roblox-pack/raw/main/experiences.zip"
+  },
+  {
+    "title": "GTA V Mods Collection",
+    "thumbnail": "https://images.unsplash.com/photo-1605362702537-d6c7b0d1d2f3?w=400",
+    "description": "Best GTA V mods & vehicles",
+    "repoPath": "https://github.com/yourusername/gta-v-pack/raw/main/mods.zip"
+  },
+  {
+    "title": "Valorant Agents Pack",
+    "thumbnail": "https://images.unsplash.com/photo-1611487587285-4c74c9a2c3e9?w=400",
+    "description": "All agents skins & voice lines",
+    "repoPath": "https://github.com/yourusername/valorant-pack/raw/main/skins.zip"
+  },
+  {
+    "title": "League of Legends Runes",
+    "thumbnail": "https://images.unsplash.com/photo-1601906341407-5d6a7f1d4f5e?w=400",
+    "description": "Pro runes & summoner spells",
+    "repoPath": "https://github.com/yourusername/lol-pack/raw/main/runes.zip"
+  },
+  {
+    "title": "Counter-Strike 2 Maps",
+    "thumbnail": "https://images.unsplash.com/photo-1609883669959-9ca4a0753131?w=400",
+    "description": "Best competitive maps",
+    "repoPath": "https://github.com/yourusername/cs2-pack/raw/main/maps.zip"
+  },
+  {
+    "title": "The Sims 4 CC Bundle",
+    "thumbnail": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400",
+    "description": "1000+ CC items",
+    "repoPath": "https://github.com/yourusername/sims4-pack/raw/main/cc.zip"
+  },
+  {
+    "title": "Destiny 2 Builds",
+    "thumbnail": "https://images.unsplash.com/photo-1605885653985-4a3c4c6e8d5e?w=400",
+    "description": "All end-game builds",
+    "repoPath": "https://github.com/yourusername/destiny2-pack/raw/main/builds.zip"
+  },
+  {
+    "title": "Among Us Skins Pack",
+    "thumbnail": "https://images.unsplash.com/photo-1578018867847-a7d9c6a6c3f5?w=400",
+    "description": "All character skins",
+    "repoPath": "https://github.com/yourusername/among-us-pack/raw/main/skins.zip"
+  }
+]
